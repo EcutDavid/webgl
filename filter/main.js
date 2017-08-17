@@ -63,7 +63,8 @@ const fragmentShaderSource = `
 
     mat3 boxBlurKernel = mat3(
       1, 1, 1,
-      1, mod(u_time, 10.0), 1,
+      // 1, mod(u_time, 10.0), 1,
+      1, 1, 1,
       1, 1, 1
     ) / 9.0;
     vec2 onePixel = vec2(1, 1) / resolution;
@@ -143,9 +144,9 @@ texture.image.onload = function() {
   handleLoadedTexture(gl, texture, draw);
 };
 texture.image.crossOrigin = '';
-// imgDom.src = texture.image.src = 'canva.png';
-imgDom.src = texture.image.src = 'github.jpg';
+imgDom.src = texture.image.src = 'canva.png';
 imgDom.src = texture.image.src = 'demo.png';
+imgDom.src = texture.image.src = 'github.jpg';
 
 function handleLoadedTexture(gl, texture, callback) {
   gl.bindTexture(gl.TEXTURE_2D, texture);
