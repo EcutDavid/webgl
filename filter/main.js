@@ -67,6 +67,12 @@ const fragmentShaderSource = `
       1, 1, 1,
       1, 1, 1
     ) / 9.0;
+
+    mat3 gaussianBlurKernel = mat3(
+      1, 2, 1,
+      2, 4, 2,
+      1, 2, 1
+    ) / 16.0;
     vec2 onePixel = vec2(1, 1) / resolution;
     vec4 color = vec4(0);
     for(int i = 0; i < 3; i++) {
